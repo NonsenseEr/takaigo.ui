@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+        }
+
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #002366;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px 10px;
+            display: block;
+            font-size: 18px;
+            background-color: #002366;
+            border: none;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .sidebar a:hover {
+            background-color: #1a53ff;
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .content h1 {
+            color: #002366;
+        }
+
+        .table-container {
+            margin-top: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        table th {
+            background-color: #002366;
+            color: white;
+        }
+
+        .form-container {
+            margin-top: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-container label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-container input, .form-container textarea, .form-container select {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-container button {
+            background-color: #002366;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #1a53ff;
+        }
+
+        .action-links a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 8px 12px;
+            background-color: #00274b;
+            border-radius: 4px;
+        }
+
+        .action-links a:hover {
+            background-color: #18006e;
+        }
+
+        .action-links {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Dashboard</h2>
+        <a href="#hiragana">Hiragana</a>
+        <a href="#katakana">Katakana</a>
+        <a href="#kanji">Daftar Kanji</a>
+        <a href="#kosakata">Kosakata</a>
+        <a href="#kotak-masuk">Kotak Masuk</a>
+        <a href="login.html">Kembali</a>
+    </div>
+
+    <div class="content">
+        <h1>Selamat Datang di Dashboard</h1>
+
+        <div id="hiragana" class="table-container">
+            <h2>Hiragana</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hiragana</th>
+                        <th>Romaji</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  
+                </tbody>
+            </table>
+        </div>
+
+        <div id="katakana" class="table-container">
+            <h2>Katakana</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Katakana</th>
+                        <th>Romaji</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>character</td>
+                        <td>meaning</td>
+                    </tr>
+                  
+                </tbody>
+            </table>
+        </div>
+
+        <div id="kanji" class="table-container">
+            <h2>Daftar Kanji</h2>
+            <div class="action-links">
+                <a href="insertdata.html">Tambah Data</a>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kanji</th>
+                        <th>Meaning</th>
+                        <th>Onyomi</th>
+                        <th>Kunyomi</th>
+                        <th>Example</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td>character</td>
+                            <td>meaning</td>
+                            <td>onyomi</td>
+                            <td>kunyomi</td>
+                            <td>example_word</td>
+                            <td class="action-links">
+                                <a href="insertdata.html" class="btn btn-warning">Edit</a>
+                    
+                                <form action="#" method="POST" onsubmit="return confirmDelete()">
+                                    
+                                    <button type="submit" class="btn btn-danger">Hapus</button>
+                                </form>
+                            
+                                
+                            </td>
+                        </tr>
+                  
+                </tbody>
+            </table>
+        </div>
+
+        <div id="kosakata" class="table-container">
+            <h2>Kosakata</h2>
+            <div class="action-links">
+                <a href="insertdata.html">Tambah Data</a>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Japan</th>
+                        <th>Romaji</th>
+                        <th>Meaning</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                    <tr>
+                        <td>japan</td>
+                        <td>romaji</td>
+                        <td>meaning</td>
+                        <td class="action-links">
+                            <a href="insertdata.html" class="btn btn-warning">Edit</a>
+                            <form action="#" method="POST" onsubmit="return confirmDelete()">
+                            
+                               <button type="submit" class="btn btn-danger">Hapus</button>
+                           </form>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <div id="kotak-masuk" class="table-container">
+            <h2>Kotak Masuk</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Message</th>
+                        <th>Feedback</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                    <tr>
+                        <td>name</td>
+                        <td>message</td>
+                        <td>feedback</td>
+                        <td class="action-links">
+                            <form action="#" method="POST" onsubmit="return confirmDelete()">
+                            
+                               <button type="submit" class="btn btn-danger">Hapus</button>
+                           </form>
+                        </td>
+                    </tr>
+                  
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    function confirmDelete() {
+        return confirm("Yakin ingin menghapus data ini?");
+    }
+</script>
+</html>

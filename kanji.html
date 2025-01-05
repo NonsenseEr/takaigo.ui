@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanji</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles1.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+
+    /* .kanji-container untuk memastikan kartu mengisi ruang secara optimal */
+    .kanji-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Menyesuaikan kolom otomatis */
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+    margin-top: 20px; /* Memberikan jarak atas */
+    }
+
+    /* .kanji-card agar kartu lebih menarik */
+    .kanji-card {
+    background-color: white;
+    width: 100%; /* Lebar kartu menyesuaikan kolom */
+    height: 300px; /* Ketinggian kartu tetap */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px; /* Menjaga tinggi kartu tetap */
+    }
+
+    .kanji-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    /* .kanji-character dan detail kanji */
+    .kanji-character {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #1e3a8a;
+    }
+
+    .kanji-details {
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+    }
+
+    .kanji-card.active .kanji-details {
+    display: block;
+    }
+
+    /* Responsivitas */
+    @media screen and (max-width: 1200px) {
+    .kanji-container {
+    grid-template-columns: repeat(3, 1fr);
+    }
+    }
+
+    @media screen and (max-width: 900px) {
+    .kanji-container {
+    grid-template-columns: repeat(2, 1fr);
+    }
+    }
+
+    @media screen and (max-width: 600px) {
+    .kanji-container {
+    grid-template-columns: 1fr;
+    }
+    .kanji-card {
+    width: 100%;
+    height: auto; /* Ketinggian kartu menyesuaikan dengan konten */
+    }
+    .kanji-character {
+    font-size: 50px; /* Ukuran karakter kanji lebih besar di layar kecil */
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <!-- Checkbox for toggling menu -->
+        <input type="checkbox" id="check">
+    
+        <!-- Menu icon -->
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+    
+        <!-- Site logo -->
+        <label class="logo">TakaiGO</label>
+    
+        <!-- Navigation links -->
+        <ul>
+          <li><a class="active" href="#">Beranda</a></li>
+          <li><a href="#">Tips Belajar</a></li>
+          <li class="dropdown">
+            <a href="#">Materi <span class="icon">▼</span></a>
+            <div class="dropdown-content">
+              
+                <a href="admin.html"><span class="icon">📚</span> Kosakata</a>
+                <a href="kosakata.html"><span class="icon">✍️</span> Tata Bahasa & partikel</a>
+                <a href="kanji.html"><span class="icon">あ</span> Hiragana</a>
+                <a href="kanji.html"><span class="icon">カ</span> Katakana</a>
+                <a href="kanji.html"><span class="icon">🈷️</span> Kanji</a>
+            </div>
+        </li>
+          <li><a href="chatbot-info.html">Chatbot</a></li>
+          <li><a href="about.html">Tentang</a></li>
+        </ul>
+      </nav>
+      <main>
+        <div class="kanji-container">
+           
+                <div class="kanji-card" onclick="toggleDetails(this)">
+                    <div class="kanji-character"></div>
+                    <div class="kanji-details">
+                        <p><strong>Meaning:</strong> 1</p>
+                        <p><strong>Onyomi:</strong> 1</p>
+                        <p><strong>Kunyomi:</strong> 1</p>
+                        <p><strong>Example:</strong> 1</p>
+                    </div>
+                </div>
+           
+        </div>
+
+        <script>
+            function toggleDetails(card) {
+                // Menutup semua kartu yang sedang aktif
+                const allCards = document.querySelectorAll('.kanji-card');
+                allCards.forEach(function(item) {
+                    if (item !== card) {
+                        item.classList.remove('active');
+                    }
+                });
+
+                // Mentoggle kartu yang diklik
+                card.classList.toggle('active');
+            }
+        </script>
+    </main>
+    
+</body>
+</html>

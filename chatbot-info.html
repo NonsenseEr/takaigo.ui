@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info chatbot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles1.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        .info-container {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+    
+        .info-container h1 {
+            color: #4fa3f7;
+            margin-bottom: 10px;
+        }
+    
+        .info-container p {
+            line-height: 1.6;
+            color: #555;
+        }
+    
+        .start-button {
+            display: inline-block;
+            margin-top: 15px;
+            margin-left: 280px;
+            padding: 10px 20px;
+            background-color: #4fa3f7;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            
+        }
+    
+        .start-button:hover {
+            background-color: #3d8ad7;
+            }
+    
+        h1, h2, h3 {
+                    color: #0056b3;
+                }
+        h1 {
+                    text-align: center;
+                    margin-bottom: 20px;
+         }
+                p {
+                    margin-bottom: 15px;
+                }
+                ul {
+                    margin: 15px 0;
+                    padding-left: 20px;
+                }
+                ul li {
+                    margin-bottom: 10px;
+                }
+                a {
+                    color: #0056b3;
+                    text-decoration: none;
+                }
+                a:hover {
+                    text-decoration: underline;
+                }
+    
+                
+    </style>
+</head>
+<body>
+    <nav>
+        <!-- Checkbox for toggling menu -->
+        <input type="checkbox" id="check">
+    
+        <!-- Menu icon -->
+        <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+        </label>
+    
+        <!-- Site logo -->
+        <label class="logo">TakaiGO</label>
+    
+        <!-- Navigation links -->
+        <ul>
+          <li><a class="active" href="home.html">Beranda</a></li>
+          <li><a href="kosakata.html">Tips Belajar</a></li>
+          <li class="dropdown">
+            <a href="#">Materi <span class="icon">▼</span></a>
+            <div class="dropdown-content">
+              
+                <a href="admin.html"><span class="icon">📚</span> Kosakata</a>
+                <a href="login.html"><span class="icon">✍️</span> Tata Bahasa & partikel</a>
+                <a href="insertdata.html"><span class="icon">あ</span> Hiragana</a>
+                <a href=""><span class="icon">カ</span> Katakana</a>
+                <a href="#"><span class="icon">🈷️</span> Kanji</a>
+            </div>
+        </li>
+          <li><a href="chatbot-info.html">Chatbot</a></li>
+          <li><a href="chatbot.html">Tentang</a></li>
+        </ul>
+      </nav>
+ 
+
+
+<div class="info-container">
+    <h1>Selamat Datang Di TakaiGo Chatbot</h1>
+
+    <h2>Apa itu Chatbot</h2>
+    <p>Chatbot adalah program komputer yang dirancang untuk mensimulasikan percakapan manusia, baik melalui teks maupun suara. Chatbot sering digunakan untuk memberikan layanan pelanggan, membantu pengguna mencari informasi, atau bahkan hanya untuk hiburan.</p>
+
+    
+        <h2>TakaiGO Chatbot</h2>
+        <p>Chatbot ini ditenagai oleh API dari Gemini dan memiliki fungsi yang sama dengan kebanyakan Chatbot pada umumnya, hanya saja TakaiGo Chatbot bertujuan untuk dapat membantu user dalam mempelajari dan memahami bahasa jepang. Chatbot ini dapat membantu user untuk menggali informasi tambahan terkait kanji, hiragana, katakana, kosakata dan lain-lain.</p>
+        <h3>Beckend Chatbot</h3>
+        <ul>
+            <li><strong>Flowise:</strong> Flowise adalah platform chatbot yang berfungsi berdasarkan serangkaian aturan yang telah diprogram sebelumnya. Bot ini hanya dapat memberikan respons yang sesuai dengan logika dan aturan yang telah ditentukan.</li>
+            <li><strong>Gemini API:</strong>  Gemini API adalah platform chatbot yang memanfaatkan teknologi kecerdasan buatan (AI) untuk memahami dan merespons percakapan lebih alami.</li>
+        
+        </ul>
+
+        <h3>Pengunaan Chatbot</h3>
+        <ul>
+            <li><strong>Prompt yang jelas:</strong> Chatbot ini masih memiliki banyak kekurangan, salah satu nya dalam melakukan pemerosesan prompt. Diperlukan Prompt yang jelas dan spesifik agar Chatbot dapat dengan mudah membacanya sehingga dapat memberikan auser jawaban yang baik.</li>
+            <li><strong>Memakai bahasa Inggris:</strong> Dikarenakan Chatbot belum terlalu sempurna, maka disarankan agar user menggunakan bahasa inggris dalam berinteraksi dengan chatbot.</li>
+            <li><strong>Topik tentang Bahasa Jepang:</strong> Karena sedari awal TakaiGo merancang Chatbot ini untuk belajar bahasa jepang, maka user tidak disarankan untuk melakukan hal lain diluar itu.</li>
+            <li><strong>TakaigoChatbot:</strong> Chatbot yang dapat membantu Anda dalam belajar bahasa Jepang dengan menyediakan latihan percakapan, kosakata, dan tata bahasa.</li>
+        </ul>
+
+
+    <p style="margin-left: 280px">Ayo mulai gunakan Chatbot!</p>
+    <a href="chatbot.html" class="start-button">Gunakan Chatbot TakaiGo</a>
+</div>
+
+
+</body>
+</html>
+
